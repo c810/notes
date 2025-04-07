@@ -1,0 +1,13 @@
+{
+  "readableLineLength": false,
+  "strictLineBreaks": true,
+  "showLineNumber": true,
+  "rightToLeft": false,
+  "foldIndent": true,
+  "foldHeading": true,
+  "useMarkdownLinks": true,
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "attachments",
+  "showInlineTitle": true,
+  "promptDelete": false
+}
