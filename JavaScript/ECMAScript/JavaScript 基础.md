@@ -267,6 +267,8 @@ for (let i = 0; i < n; i++) {
 }
 ```
 
+> 后面有 [[#10.2 遍历对象|增强for循环]]
+
 ## 8 数组
 
 ### 8.1 数组基本使用
@@ -278,21 +280,21 @@ let arr1 = [1, 2, 3] // 推荐
 let arr2 = new Array(1, 2, 3)
 ```
 
-### 8.2 操作数组
+#### 8.1.2 操作数组
 
-#### 8.2.1 查
+##### 8.1.2.1 查
 
 ```JavaScript
 arr[1]
 ```
 
-#### 8.2.2 改
+##### 8.1.2.2 改
 
 ```JavaScript
 arr[1] = 2
 ```
 
-#### 8.2.3 增
+##### 8.1.2.3 增
 
 ```JavaScript
 arr.push(4) // 往末尾添加一个或多个数据，返回数组长度
@@ -300,7 +302,7 @@ arr.push(4, 5, 6, 7)
 arr.unshift(4) // 往开头添加一个或多个数据，返回数组长度
 ```
 
-#### 8.2.4 删
+##### 8.1.2.4 删
 
 ```JavaScript
 arr.pop() // 删除最后一个元素，并返回该元素的值
@@ -453,4 +455,124 @@ fn(1, 2)
 fn()
 ```
 
-## 对象
+## 10 对象
+
+对象（object）可以理解为是一种无序的数据集合。
+
+### 10.1 对象使用
+
+#### 10.1.1 声明对象
+
+对象由属性和方法组成。
+
+```JavaScript
+let 对象名 = {
+  属性名: 属性值,
+  方法名: 函数
+}
+let 对象名 = new Object()
+
+let obj = {
+  name: '小米15',
+  num: '100020384578',
+  price: '4999元'
+}
+```
+
+#### 10.1.2 操作对象
+
+```JavaScript
+let obj = {
+  uname: '张三',
+  age: 18,
+  gender: '男'
+}
+```
+
+##### 10.1.2.1 查
+
+对象. 属性
+
+对象\[' 属性 ']
+
+```JavaScript
+obj.uname
+// 如果属性名是字符串，比如 'user-name' = '张三'， 则：
+obj['user-name'] // 可以防止-符号导致obj.user-name解析错误
+// 当然 uname = '张三' 这样的也可以 obj['uname'] 来使用
+```
+
+##### 10.1.2.2 改
+
+对象. 属性 = 值
+
+```JavaScript
+obj.uname = '李四'
+```
+
+##### 10.1.2.3 增
+
+对象. 新属性 = 值
+
+```JavaScript
+obj.phoneNum = '15552257382'
+```
+
+##### 10.1.2.4 删
+
+delete 对象. 属性
+
+```JavaScript
+delete obj.phoneNum
+```
+
+#### 10.1.3 对象中的方法
+
+```JavaScript
+let person = {
+  name: '张三',
+  sayHi: function(x, y) {
+    document.write('hi')
+  }
+}
+person.sayHi(1, 2)
+```
+
+### 10.2 遍历对象
+
+增强 for 循环。
+
+> 之前的 [[#7.2.2 for 循环|普通for循环]]
+
+```JavaScript
+let obj = {
+  uname: '张三',
+  age: 18,
+  sex: '男'
+}
+
+for (let k in obj) {
+  console.log(k) // 属性名，是字符串型
+  console.log(obj[k]) // 属性值
+}
+```
+
+### 10.3 内置对象
+
+JavaScript 内部提供的对象，包含各种属性和方法给开发者调用。
+
+#### 10.3.1 内置对象 Math
+
+```JavaScript
+Math.PI
+Math.ceil(1.4) // 向上取整,2
+Math.floor(1.4) // 向下取整，1
+Math.round(1.4) // 四舍五入，1
+Math.max(1, 2) // 最大值，2
+Math.min(1, 2, 3) // 最小值，1
+Math.pow(2, 3) // 幂运算，2^3，8
+Math.abs(-1) // 绝对值，1
+Math.random() // 生成[0, 1)之间的随机数
+Math(Math.random() * (N - M + 1)) + M // 生成[M, N]的随机整数
+```
+
