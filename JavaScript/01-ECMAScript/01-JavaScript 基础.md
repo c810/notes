@@ -575,4 +575,3 @@ Math.abs(-1) // 绝对值，1
 Math.random() // 生成[0, 1)之间的随机数
 Math(Math.random() * (N - M + 1)) + M // 生成[M, N]的随机整数
 ```
-
